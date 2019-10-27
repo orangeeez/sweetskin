@@ -50,7 +50,7 @@ export class MainListItemComponent implements OnInit, AfterViewInit {
       if (event.target) {
         if (
           event.target['scrollTop'] +
-            this.interactionService.sidenavcontentHeight / 2 >=
+            this.interactionService.sidenavcontentHeight / 1.5 >=
           this.elementOffsetTop
         ) {
           this.animateElement('bounceInLeft')
@@ -79,7 +79,6 @@ export class MainListItemComponent implements OnInit, AfterViewInit {
     this.elementOffsetTop = this.el.nativeElement.offsetTop
     this.elementOffsetHeight = this.el.nativeElement.offsetHeight
     this.elementSpaceHeight = this.elementOffsetTop + this.elementOffsetHeight
-    // console.log(this.elementOffsetTop)
     if (this.elementOffsetTop <= this.interactionService.sidenavcontentHeight) {
       this.isElementShown = true
       this.scrollEvent$.unsubscribe()

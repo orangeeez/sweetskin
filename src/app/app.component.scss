@@ -1,0 +1,27 @@
+@import './styles/_variables';
+@import './styles/_mixins';
+
+mat-sidenav {
+  @include xs {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  @include sm {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  @include md {
+    width: 30%;
+    min-width: 30%;
+  }
+}
+
+.sidenav-container {
+  position: absolute;
+  top: $header-height;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

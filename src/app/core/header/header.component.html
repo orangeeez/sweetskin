@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button fxShow="true" fxHide.gt-sm="true" mat-icon-button aria-label="Menu" (click)="onMenuClick()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div fxFlex fxShow="true" fxHide.lt-md="true">
+      <button *ngFor="let item of menuItems" mat-button [routerLink]="item.routerLink">
+        {{ item.name }}
+      </button>
+    </div>
+    <span class="spacer"></span>
+    <mat-icon class="rotate90" aria-hidden="false" aria-label="Dark mode">brightness_2</mat-icon>
+    <mat-slide-toggle [checked]="isDarkTheme | async" (change)="toggleDarkTheme($event.checked)"></mat-slide-toggle>
+  </mat-toolbar-row>
+</mat-toolbar>

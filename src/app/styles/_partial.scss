@@ -1,0 +1,65 @@
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+  transform: $property;
+}
+
+.rotate90 {
+  @include transform(rotate(180deg));
+}
+
+.menu-item {
+  @extend .center;
+
+  button {
+    @extend .uppercase;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px 0;
+    width: 80%;
+  }
+}
+
+app-services {
+  button {
+    position: absolute !important;
+    top: 5px;
+    right: 5px;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .mat-header-cell {
+    font-size: 14px !important;
+  }
+
+  .cell {
+    @extend .bold;
+  }
+}
+
+.content-text {
+  font-family: $font-family-main;
+  line-height: $content-line-height;
+}
+
+.center {
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}

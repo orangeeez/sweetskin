@@ -1,0 +1,58 @@
+@import '~app/styles/_variables';
+@import '~app/styles/_partial';
+@import '~app/styles/_mixins';
+@import '~app/styles/_h-carousel-variables';
+
+.header {
+  @extend .bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  color: white;
+  font-family: $font-family-main;
+
+  @include xs {
+    width: $xs-header-width;
+    height: $xs-header-height;
+    bottom: $xs-header-bottom;
+    left: $xs-header-left;
+  }
+
+  @include sm {}
+
+  @include md {
+    width: $md-header-width;
+    height: $md-header-height;
+    bottom: $md-header-bottom;
+    left: $md-header-left;
+  }
+}
+
+.header.longtext {
+  display: block !important;
+  text-align: center;
+  font-size: 12px;
+
+  @include xs {
+    width: $xs-header-longtext-width;
+    left: $xs-header-longtext-left;
+    line-height: $xs-header-height;
+    font-size: 12px;
+  }
+
+  @include sm {}
+
+  @include md {
+    width: $md-header-longtext-width;
+    left: $md-header-longtext-left;
+    line-height: $md-header-height;
+    font-size: 15px;
+  }
+}
+
+.header.longertext {
+  @include xs {
+    line-height: 18px !important
+  }
+}

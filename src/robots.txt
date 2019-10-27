@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://sweetskin.kiev.ua/sitemap.xml

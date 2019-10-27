@@ -1,0 +1,29 @@
+// CARD VARS
+$xs-card-width: 320px;
+$xs-card-height: 320px;
+$md-card-width: 500px;
+$md-card-height: 500px;
+
+// IMAGE VARS
+$image-padding: 20px;
+$xs-image-width: calc(#{$xs-card-width} * 80 / 100);
+
+$md-image-width: calc(#{$md-card-width} * 90 / 100);
+
+
+// HEADER VARS
+$xs-header-width: calc(#{$xs-image-width} * 80 / 100);
+$xs-header-height: 40px;
+$xs-header-bottom: 20px;
+$xs-header-left: calc((#{$xs-image-width} - #{$xs-header-width}) / 2 + #{$image-padding});
+
+$xs-header-longtext-width: calc(#{$xs-image-width} * 95 / 100);
+$xs-header-longtext-left: calc((#{$xs-image-width} - #{$xs-header-longtext-width}) / 2 + #{$image-padding});
+$md-header-longtext-width: calc(#{$md-image-width} * 95 / 100);
+$md-header-longtext-left: calc((#{$md-image-width} - #{$md-header-longtext-width}) / 2 + #{$image-padding});
+
+
+$md-header-width: calc(#{$md-card-width} * 70 / 100);
+$md-header-height: 60px;
+$md-header-bottom: 15px;
+$md-header-left: calc((#{$md-image-width} - #{$md-header-width}) / 2 + #{$image-padding});

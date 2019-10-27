@@ -1,0 +1,19 @@
+<div
+    class="container"
+    fxLayout.xs="column"
+    fxLayout.sm="column"
+    fxLayout.md="row wrap"
+    fxLayout.lg="row wrap"
+    fxLayoutAlign="flex-start"
+>
+    <app-main-list-item
+        *ngFor=" let item of items; let i=index"
+        [left]="i % 2"
+        [item]="item"
+        [isTeam]="isTeam"
+        [imageFlex]="imageFlex"
+        [contentFlex]="contentFlex"
+        [elementNumber]="i"
+    >
+    </app-main-list-item>
+</div>

@@ -1,0 +1,10 @@
+@import '~app/styles/_variables';
+@import '~app/styles/_mixins';
+
+mat-tab-group {
+  min-height: 100%;
+
+  @include md {
+    padding: 0 100px;
+  }
+}

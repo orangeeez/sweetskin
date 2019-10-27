@@ -1,0 +1,16 @@
+mat-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+:host {
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  align-items: center;
+  font-size: 13px;
+}
+
+.spacer {
+  flex-grow: 1;
+}

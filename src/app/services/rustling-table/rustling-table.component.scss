@@ -1,0 +1,14 @@
+@import '~app/styles/_variables';
+@import '~app/styles/_mixins';
+
+th {
+  @include md {
+    font-size: 18px !important;
+  }
+}
+
+td {
+  @include md {
+    font-size: 18px;
+  }
+}

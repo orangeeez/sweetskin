@@ -1,0 +1,14 @@
+<div class="fab-div">
+  <button *ngIf="!item.icon" mat-fab color="primary">{{ item.id }}</button>
+  <button *ngIf="item.icon" mat-icon-button color="primary" (click)="onLinkClick(item)">
+    <span [ngSwitch]="item.svg">
+      <mat-icon *ngSwitchCase="true" [svgIcon]="item.icon"></mat-icon>
+      <mat-icon *ngSwitchCase="false">{{ item.icon }}</mat-icon>
+    </span>
+  </button>
+</div>
+<div class="content">
+  {{ item.text }}
+  <br />
+  {{ item?.subtext }}
+</div>

@@ -1,0 +1,76 @@
+$screen-xs-min: 0;
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+$screen-square-aspect-ratio: '(min-aspect-ratio: 3/2)';
+$screen-classic-aspect-ratio: '(min-aspect-ratio: 4/3)';
+$screen-wide-aspect-ratio: '(min-aspect-ratio: 16/9)';
+$screen-cinema-aspect-ratio: '(min-aspect-ratio: 21/9)';
+
+@mixin square-aspect-ratio {
+  @media #{$screen-square-aspect-ratio} {
+    @content;
+  }
+}
+
+@mixin classic-aspect-ratio {
+  @media #{$screen-classic-aspect-ratio} {
+    @content;
+  }
+}
+
+@mixin wide-aspect-ratio {
+  @media #{$screen-wide-aspect-ratio} {
+    @content;
+  }
+}
+
+@mixin cinema-aspect-ratio {
+  @media #{$screen-cinema-aspect-ratio} {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media (min-width: #{$screen-xs-min}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin box-shadow($property) {
+  box-shadow: $property;
+  -moz-box-shadow: $property;
+  -webkit-box-shadow: $property;
+  -khtml-box-shadow: $property;
+}
+
+@mixin clip-path($property) {
+  -webkit-clip-path: $property;
+  clip-path: $property;
+}

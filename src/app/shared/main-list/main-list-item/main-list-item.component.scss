@@ -1,0 +1,68 @@
+@import '~app/styles/_mixins';
+@import '~app/styles/_variables';
+@import '~app/styles/_partial';
+
+:host {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.image {
+  @include clip-path(polygon(25% 0%, 100% 0%, 100% 100%, 10% 100%));
+  width: 100%;
+  height: 100%;
+}
+
+.image.team {
+  width: 85% !important;
+}
+
+img.left {
+  @include clip-path(polygon(25% 0%, 100% 0%, 100% 100%, 10% 100%));
+}
+
+img.right {
+  @include clip-path(polygon(0% 0%, 90% 0%, 75% 100%, 0% 100%));
+}
+
+.content {
+  display: flex;
+  align-self: center;
+
+  @include xs {
+    padding: 10px 40px;
+    font-size: 14px;
+  }
+
+  @include sm {
+    padding: 10px 40px;
+    font-size: 14px;
+  }
+
+  @include md {
+    padding: 0;
+    font-size: 16px;
+  }
+
+  @include lg {
+    font-size: 18px;
+  }
+
+  @include xl {
+    font-size: 22px;
+  }
+
+  @extend .content-text;
+}
+
+.content.left {
+  @include md {
+    padding-left: 40px;
+  }
+}
+
+.content.right {
+  @include md {
+    padding-right: 40px;
+  }
+}

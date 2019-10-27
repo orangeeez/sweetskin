@@ -1,0 +1,40 @@
+@import '~app/styles/_variables';
+@import '~app/styles/_partial';
+@import '~app/styles/_mixins';
+
+:host {
+  margin: 10px 0;
+}
+
+img {
+  @include xs {
+    width: 40px;
+  }
+
+  @include sm {
+    width: 64px;
+  }
+
+  @include md {
+    width: 70px;
+  }
+}
+
+.content {
+  @extend .uppercase;
+  font-family: $font-family-main;
+  font-size: 12px;
+  margin-top: 10px;
+
+  @include xs {
+    font-size: 12px;
+  }
+
+  @include sm {
+    font-size: 14px;
+  }
+
+  @include md {
+    font-size: 14px;
+  }
+}

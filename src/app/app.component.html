@@ -1,0 +1,46 @@
+<div [ngClass]="{ 'dark-theme': isDarkTheme | async }">
+    <div class="mat-app-background">
+        <app-header
+            [sidenav]="sidenav"
+            [menuItems]="menuItems"
+        ></app-header>
+        <mat-sidenav-container
+            class="sidenav-container"
+            (backdropClick)="close()"
+        >
+            <mat-sidenav
+                #sidenav
+                (keydown.escape)="close()"
+                disableClose
+            >
+                <p class="menu-item">
+                    <img [src]="interactionService.isSafari ? 'assets/images/logo.png' : 'assets/images/logo.webp'">
+                </p>
+                <p class="menu-item">
+                    <button
+                        *ngFor="let item of menuItems"
+                        mat-button
+                        [routerLink]="item.routerLink"
+                        (click)="close()"
+                    >
+                        {{ item.name }}
+                    </button>
+                </p>
+                <app-pwa-install *ngIf="!interactionService.isPWAInstalled"></app-pwa-install>
+            </mat-sidenav>
+            <mat-sidenav-content
+                #sidenavcontent
+                (scroll)="onScroll($event)"
+            >
+                <app-carousel
+                    [showButton]="router.url === '/services' && interactionService.notificationPermission !== 'granted'"
+                    [slides]="interactionService.isSafari ? slides.jpg : slides.webp"
+                    [proportion]="'40'"
+                >
+                </app-carousel>
+                <router-outlet (activate)="onActivate()"></router-outlet>
+            </mat-sidenav-content>
+        </mat-sidenav-container>
+        <app-fab></app-fab>
+    </div>
+</div>

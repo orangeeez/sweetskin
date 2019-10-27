@@ -1,0 +1,56 @@
+@import '~app/styles/_variables';
+@import '~app/styles/_partial';
+@import '~app/styles/_mixins';
+@import '~app/styles/_h-carousel-variables';
+
+mat-tab-group {
+  align-items: center;
+
+  mat-icon {
+    padding: 0 10px;
+  }
+}
+
+.scrolling-wrapper-flexbox {
+  background-color: #f3d4dc;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin-top: 30px;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    position: relative;
+    flex: 0 0 auto;
+
+    @include xs {
+      width: $xs-card-width;
+      height: $xs-card-height;
+    }
+
+    @include sm {}
+
+    @include md {
+      width: $md-card-width;
+      height: $md-card-height;
+    }
+
+    img {
+      padding: $image-padding;
+
+      @include xs {
+        width: $xs-image-width;
+      }
+
+      @include sm {}
+
+      @include md {
+        width: $md-image-width;
+      }
+    }
+  }
+}

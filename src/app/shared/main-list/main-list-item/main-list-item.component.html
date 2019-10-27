@@ -1,0 +1,27 @@
+<div
+    [fxFlexOrder]="!!left ? 2 : 1"
+    class="image-div"
+    [fxFlex.md]="imageFlex"
+    [fxFlex.lg]="imageFlex"
+    [@bounceInLeft]="bounceInLeft"
+    [style.visibility]="isElementShown ? 'visible' : 'hidden'"
+>
+    <img
+        [ngClass]="[!!left ? 'left' : 'right', isTeam ? 'team' : '']"
+        class="image"
+        [src]="item.image"
+        [srcset]="item.image + ' 450w, ' + item.imageMD + ' 800w'"
+        (load)="onImageLoaded()"
+    >
+</div>
+<div
+    [fxFlexOrder]="!!left ? 1 : 2"
+    [ngClass]="!!left ? 'left' : 'right'"
+    class="content"
+    [fxFlex.md]="contentFlex"
+    [fxFlex.lg]="contentFlex"
+    [@bounceInLeft]="bounceInLeft"
+    [style.visibility]="isElementShown ? 'visible' : 'hidden'"
+>
+    {{ item.text }}
+</div>

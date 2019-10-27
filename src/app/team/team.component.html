@@ -1,0 +1,10 @@
+<app-blockquote #start [quote]="quote"></app-blockquote>
+<app-heading [heading]="heading_1" [subheading]="subheading_1"></app-heading>
+<app-main-list [items]="listItem_1" [isTeam]="true" [imageFlex]="30" [contentFlex]="70"></app-main-list>
+<app-heading [heading]="heading_2" [subheading]="subheading_2"></app-heading>
+<app-main-list [items]="listItem_2" [isTeam]="true" [imageFlex]="30" [contentFlex]="70"></app-main-list>
+<app-heading [heading]="heading_3" [subheading]="subheading_3"></app-heading>
+<br />
+<app-carousel [slides]="interactionService.isSafari ? slides.jpg : slides.webp"
+  [proportion]="interactionService.carouselProportion" [maxWidth]="interactionService.carouselMaxWidth"
+  [hideOverlay]="'true'" [hideTitle]="'true'"></app-carousel>

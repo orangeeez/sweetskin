@@ -1,0 +1,44 @@
+<mat-carousel
+    #matCarousel
+    [timings]="timings"
+    [autoplay]="autoplay"
+    [interval]="interval"
+    [loop]="loop"
+    [hideArrows]="hideArrows"
+    [hideIndicators]="hideIndicators"
+    [maxWidth]="maxWidth"
+    [proportion]="proportion"
+    [useKeyboard]="useKeyboard"
+    [useMouseWheel]="useMouseWheel"
+    [orientation]="orientation"
+    [slides]="slides.length"
+    (change)="onChange($event)"
+>
+    <mat-carousel-slide
+        #matCarouselSlide
+        *ngFor="let slide of slides"
+        [image]="slide"
+        [overlayColor]="'#00000040'"
+        [hideOverlay]="hideOverlay"
+    >
+        <ng-container *ngIf="!hideTitle">
+            <div class="title">
+                <h1 class="upper">Студия</h1>
+                <h1
+                    color="accent"
+                    class="bottom"
+                >
+                    Sweetskin
+                </h1>
+                <button
+                    *ngIf="showButton"
+                    mat-raised-button
+                    color="primary"
+                    (click)="onNotificationClick()"
+                >
+                    Хочу получать предложения первым
+                </button>
+            </div>
+        </ng-container>
+    </mat-carousel-slide>
+</mat-carousel>

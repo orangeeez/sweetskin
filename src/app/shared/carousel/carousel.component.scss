@@ -1,0 +1,75 @@
+@import '~app/styles/_variables';
+@import '~app/styles/_mixins';
+@import '~@angular/material/theming';
+
+@mixin carousel-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  app-team,
+  app-main {
+    .carousel {
+      @include classic-aspect-ratio {
+        margin-left: 0 !important;
+      }
+
+      @include square-aspect-ratio {
+        margin-left: 10% !important;
+      }
+
+      @include wide-aspect-ratio {
+        margin-left: 10% !important;
+      }
+
+      @include cinema-aspect-ratio {
+        margin-left: 15% !important;
+      }
+    }
+  }
+
+  .title {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      font-family: 'Lato', sans-serif;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+
+      @include xs {
+        font-size: 40px;
+        margin-top: -20px;
+      }
+
+      @include sm {
+        font-size: 50px;
+        margin-top: -30px;
+      }
+
+      @include md {
+        font-size: 80px;
+        margin-top: -40px;
+      }
+    }
+
+    h1.upper {
+      color: white;
+      background-image: -webkit-gradient(linear,
+          left top,
+          left bottom,
+          from(rgb(255, 255, 255, 1)),
+          to(rgba(255, 255, 255, 0.1)));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    h1.bottom {
+      font-style: italic;
+      color: mat-color($primary);
+    }
+  }
+}

@@ -1,0 +1,3 @@
+    <div [ngClass]="[item.header.length >= 35 ? 'longtext' : '',
+                    item.header.length > 40 ? 'longertext' : '']" [style.background-color]="item.headerColor"
+      class="header">{{item.header}}</div>

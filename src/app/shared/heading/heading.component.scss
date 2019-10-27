@@ -1,0 +1,69 @@
+@import '~app/styles/_variables';
+@import '~app/styles/_partial';
+@import '~@angular/material/theming';
+
+@mixin heading-theme($theme) {
+  $primary: map-get($theme, primary);
+
+  app-heading {
+    div {
+      margin-top: 40px;
+
+      @include md {
+        padding: 0 10%;
+      }
+
+      h1 {
+        @extend .center;
+        @extend .uppercase;
+        margin: 10px 20px;
+        color: mat-color($primary);
+        font-family: $font-family-secondary;
+
+        @include xs {
+          font-size: 24px;
+        }
+
+        @include sm {
+          font-size: 24px;
+        }
+
+        @include md {
+          font-size: 36px;
+        }
+      }
+
+      h2 {
+        @extend .center;
+        @extend .uppercase;
+        margin: 10px 20px;
+        font-family: $font-family-main;
+        font-weight: 100;
+        line-height: 1.5;
+
+        @include xs {
+          font-size: 13px;
+        }
+
+        @include sm {
+          font-size: 15px;
+        }
+
+        @include md {
+          font-size: 18px;
+        }
+      }
+
+      hr {
+        border: none;
+        height: 20px;
+        width: 90%;
+        height: 50px;
+        margin-top: 0;
+        border-bottom: 1px solid mat-color($primary);
+        box-shadow: 0 20px 20px -20px mat-color($primary);
+        margin: -50px auto 10px;
+      }
+    }
+  }
+}

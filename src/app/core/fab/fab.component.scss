@@ -1,0 +1,11 @@
+@import '~app/styles/_variables';
+
+button {
+  z-index: $z-index-fab;
+}
+
+.bottom-right {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}

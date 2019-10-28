@@ -38,7 +38,9 @@ export class HeadingComponent extends BaseAnimation
     public animationService: AnimationService,
     public el: ElementRef
   ) {
-    super(interactionService, animationService, el, 'heading', 'bounceInDown')
+    super(interactionService, animationService, el)
+    this.componentType = 'heading'
+    this.animationType = 'bounceInDown'
   }
 
   ngOnInit() {}

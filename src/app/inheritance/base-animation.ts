@@ -1,26 +1,36 @@
 import { Subscription } from 'rxjs'
 import { InteractionService } from '@app/core/services/interaction.service'
 import { AnimationService } from '@app/core/services/animation.service'
-import { ElementRef, Component, AfterViewInit, OnDestroy } from '@angular/core'
+import {
+  ElementRef,
+  Component,
+  AfterViewInit,
+  OnDestroy,
+  Injectable,
+} from '@angular/core'
 
-@Component({})
+// @Component({
+//   selector: 'base-animation',
+//   templateUrl: './base-animation.html',
+//   styleUrls: ['./base-animation.scss'],
+// })
+// @Injectable()
 export class BaseAnimation implements AfterViewInit, OnDestroy {
   scrollEvent$: Subscription
   bounceInLeft: any = false
   bounceInDown: any = false
   elementOffsetTop: number
   isElementShown: boolean = false
+  componentType: string
+  animationType: string
 
   constructor(
     public interactionService: InteractionService,
     public animationService: AnimationService,
-    public el: ElementRef,
-    public componentType: string,
-    public animationType: string
+    public el: ElementRef
   ) {
     this.scrollEvent$ = this.animationService.scroll.subscribe(event => {
       if (event.target && this.elementOffsetTop) {
-        console.log('target founddd')
         this.initElementOffset()
         if (this.isElementInView(event)) {
           this.animateElement(this.animationType)

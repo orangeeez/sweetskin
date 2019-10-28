@@ -43,13 +43,10 @@ export class MainListItemComponent extends BaseAnimation
     public animationService: AnimationService,
     public el: ElementRef
   ) {
-    super(
-      interactionService,
-      animationService,
-      el,
-      'main-list-item',
-      'bounceInLeft'
-    )
+    super(interactionService, animationService, el)
+
+    this.componentType = 'main-list-item'
+    this.animationType = 'bounceInLeft'
   }
 
   ngOnInit() {}

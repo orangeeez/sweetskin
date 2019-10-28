@@ -30,14 +30,18 @@ img.right {
   align-self: center;
 
   @include xs {
-    padding: 10px 40px;
+    margin: 10px 30px;
+    padding: 0 20px;
     font-size: 14px;
+    border-left: 2px solid $main-color;
   }
 
-  @include sm {
-    padding: 10px 40px;
-    font-size: 14px;
-  }
+  // @include sm {
+  //   margin: 10px 30px;
+  //   padding: 0 20px;
+  //   font-size: 14px;
+  //   border-left: 2px solid $main-color;
+  // }
 
   @include md {
     padding: 0;
@@ -58,11 +62,14 @@ img.right {
 .content.left {
   @include md {
     padding-left: 40px;
+    padding-right: 20px;
+
   }
 }
 
 .content.right {
   @include md {
+    padding-left: 20px;
     padding-right: 40px;
   }
 }

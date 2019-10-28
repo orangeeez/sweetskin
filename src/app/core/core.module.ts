@@ -21,6 +21,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database'
 import { AngularFireAuthModule } from '@angular/fire/auth'
 import { AngularFireMessagingModule } from '@angular/fire/messaging'
 import { PwaInstallComponent } from './pwa-install/pwa-install.component'
+import { AnimationService } from './services/animation.service'
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { PwaInstallComponent } from './pwa-install/pwa-install.component'
   providers: [
     ThemeService,
     PwaService,
+    AnimationService,
     AuthGuard,
     NoAuthGuard,
     FcmService,

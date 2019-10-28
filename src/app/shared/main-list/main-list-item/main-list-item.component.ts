@@ -4,13 +4,15 @@ import {
   Input,
   ElementRef,
   AfterViewInit,
+  OnDestroy,
 } from '@angular/core'
 import { MainListItem } from '@app/models/main-list-item'
 import { MainListItemType } from '@app/models/main-list-item-type'
 import { InteractionService } from '@app/core/services/interaction.service'
 import { bounceInLeft } from 'ng-animate'
 import { trigger, transition, useAnimation } from '@angular/animations'
-import { Subscription } from 'rxjs'
+import { AnimationService } from '@app/core/services/animation.service'
+import { BaseAnimation } from '@app/inheritance/base-animation'
 
 @Component({
   selector: 'app-main-list-item',
@@ -27,61 +29,36 @@ import { Subscription } from 'rxjs'
     ]),
   ],
 })
-export class MainListItemComponent implements OnInit, AfterViewInit {
+export class MainListItemComponent extends BaseAnimation
+  implements OnInit, AfterViewInit, OnDestroy {
   MainListItemType = MainListItemType
   @Input() left: boolean
   @Input() item: MainListItem
   @Input() isTeam: boolean
   @Input() imageFlex: number
   @Input() contentFlex: number
-  @Input() elementNumber: number
-  scrollEvent$: Subscription
-  bounceInLeft: any = false
-  elementOffsetTop: number
-  elementOffsetHeight: number
-  elementSpaceHeight: number
-  isElementShown: boolean
 
   constructor(
     public interactionService: InteractionService,
+    public animationService: AnimationService,
     public el: ElementRef
   ) {
-    this.scrollEvent$ = this.interactionService.scroll.subscribe(event => {
-      if (event.target) {
-        if (
-          event.target['scrollTop'] +
-            this.interactionService.sidenavcontentHeight / 1.5 >=
-          this.elementOffsetTop
-        ) {
-          this.animateElement('bounceInLeft')
-          this.scrollEvent$.unsubscribe()
-        }
-      }
-    })
+    super(
+      interactionService,
+      animationService,
+      el,
+      'main-list-item',
+      'bounceInLeft'
+    )
   }
 
   ngOnInit() {}
 
-  ngAfterViewInit() {}
-
-  animateElement(name: string) {
-    this[name] = !this[name]
-    this.isElementShown = true
+  ngAfterViewInit() {
+    super.ngAfterViewInit()
   }
 
-  onImageLoaded() {
-    if (
-      this.elementOffsetTop ||
-      this.elementOffsetHeight ||
-      this.elementSpaceHeight
-    )
-      return
-    this.elementOffsetTop = this.el.nativeElement.offsetTop
-    this.elementOffsetHeight = this.el.nativeElement.offsetHeight
-    this.elementSpaceHeight = this.elementOffsetTop + this.elementOffsetHeight
-    if (this.elementOffsetTop <= this.interactionService.sidenavcontentHeight) {
-      this.isElementShown = true
-      this.scrollEvent$.unsubscribe()
-    }
+  ngOnDestroy() {
+    super.ngOnDestroy()
   }
 }

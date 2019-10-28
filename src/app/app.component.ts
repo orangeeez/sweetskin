@@ -20,6 +20,7 @@ import { ScreenRatio } from './enums/screen-ratio'
 import { Router, NavigationEnd } from '@angular/router'
 import { PwaService } from './core/services/pwa.service'
 import { FcmService } from './core/services/fcm.service'
+import { AnimationService } from './core/services/animation.service'
 
 @Component({
   selector: 'app-root',
@@ -58,6 +59,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     private domSanitizer: DomSanitizer,
     public router: Router,
     public interactionService: InteractionService,
+    public animationService: AnimationService,
     private pwaService: PwaService,
     private fcmService: FcmService
   ) {
@@ -163,7 +165,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   onScroll(event: Event) {
-    this.interactionService._scroll.next(event)
+    this.animationService._scroll.next(event)
   }
 
   close() {

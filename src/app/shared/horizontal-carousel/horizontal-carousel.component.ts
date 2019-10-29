@@ -218,7 +218,11 @@ export class HorizontalCarouselComponent implements OnInit, AfterViewInit {
   }
 
   scroll(el: any) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+    el.scrollIntoView({
+      behavior: 'smooth',
+      block: 'nearest',
+      inline: 'center',
+    })
   }
 
   onSwipe(event) {

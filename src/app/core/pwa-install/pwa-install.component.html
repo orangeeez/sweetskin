@@ -1,14 +1,19 @@
 <div class="container">
-  <div class="image">
-    <img [src]="logo">
-  </div>
-  <div class="text">
-    <div class="heading">Посещайте наш сайт даже оффлайн</div>
-    <div class="subheading">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    <div class="image">
+        <img [src]="logo">
     </div>
-  </div>
+    <div class="text">
+        <div class="heading">Посещайте наш сайт даже оффлайн</div>
+        <div class="subheading">
+            Получайте уведомления о скидках и акциях
+        </div>
+    </div>
 </div>
 <div class="action">
-  <button mat-stroked-button (click)="onPwaInstallClick()">Установить</button>
+    <button
+        mat-stroked-button
+        (click)="onPwaInstallClick()"
+    >
+        Установить
+    </button>
 </div>

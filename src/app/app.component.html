@@ -33,7 +33,6 @@
                 (scroll)="onScroll($event)"
             >
                 <app-carousel
-                    [showButton]="router.url === '/services' && interactionService.notificationPermission !== 'granted'"
                     [slides]="interactionService.isSafari ? slides.jpg : slides.webp"
                     [proportion]="'40'"
                 >

@@ -16,7 +16,6 @@ export class CarouselComponent implements OnInit {
   @Input() public proportion = 70
   @Input() public hideOverlay: boolean
   @Input() public hideTitle: boolean
-  @Input() public showButton: boolean
   @Input() public maxWidth = 'auto'
   public timings = '250ms ease-in'
   public autoplay = true
@@ -34,8 +33,4 @@ export class CarouselComponent implements OnInit {
   ngOnInit() {}
 
   public onChange(index: number) {}
-
-  onNotificationClick() {
-    this.fcmService.requestPermission(this.fcmService.generateUUID())
-  }
 }

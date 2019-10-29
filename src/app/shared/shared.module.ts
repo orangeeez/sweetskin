@@ -17,6 +17,8 @@ import { FabListComponent } from './fab-list/fab-list.component'
 import { PwaUpdatedComponent } from './snackbars/pwa-updated/pwa-updated.component'
 import { PwaInstallationComponent } from './snackbars/pwa-installation/pwa-installation.component'
 import { PwaMessagingComponent } from './snackbars/pwa-messaging/pwa-messaging.component'
+import { IconListComponent } from './icon-list/icon-list.component'
+import { IconListItemComponent } from './icon-list/icon-list-item/icon-list-item.component'
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { PwaMessagingComponent } from './snackbars/pwa-messaging/pwa-messaging.c
     PwaUpdatedComponent,
     PwaInstallationComponent,
     PwaMessagingComponent,
+    IconListComponent,
+    IconListItemComponent,
   ],
   imports: [
     CommonModule,
@@ -57,6 +61,8 @@ import { PwaMessagingComponent } from './snackbars/pwa-messaging/pwa-messaging.c
     HorizontalCarouselComponent,
     FabListComponent,
     FabListItemComponent,
+    IconListComponent,
+    IconListItemComponent,
   ],
   entryComponents: [
     PwaInstallationComponent,

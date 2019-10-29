@@ -9,16 +9,11 @@ import {
   Injectable,
 } from '@angular/core'
 
-// @Component({
-//   selector: 'base-animation',
-//   templateUrl: './base-animation.html',
-//   styleUrls: ['./base-animation.scss'],
-// })
-// @Injectable()
 export class BaseAnimation implements AfterViewInit, OnDestroy {
   scrollEvent$: Subscription
   bounceInLeft: any = false
   bounceInDown: any = false
+  fadeIn: any = false
   elementOffsetTop: number
   isElementShown: boolean = false
   componentType: string
@@ -47,6 +42,13 @@ export class BaseAnimation implements AfterViewInit, OnDestroy {
   private isElementInView(event) {
     switch (this.componentType) {
       case 'heading':
+        return (
+          event.target['scrollTop'] +
+            this.interactionService.sidenavcontentHeight -
+            20 >=
+          this.elementOffsetTop
+        )
+      case 'icon-list-item':
         return (
           event.target['scrollTop'] +
             this.interactionService.sidenavcontentHeight -

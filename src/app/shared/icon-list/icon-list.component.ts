@@ -1,15 +1,37 @@
-import { Component, OnInit } from '@angular/core'
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  OnDestroy,
+  ElementRef,
+} from '@angular/core'
 import { MainListItem } from '@app/models/main-list-item'
 import { InteractionService } from '@app/core/services/interaction.service'
+import { BaseAnimation } from '@app/inheritance/base-animation'
+import { AnimationService } from '@app/core/services/animation.service'
+import { bounceIn } from 'ng-animate'
+import { trigger, transition, useAnimation } from '@angular/animations'
 
 @Component({
   selector: 'app-icon-list',
   templateUrl: './icon-list.component.html',
   styleUrls: ['./icon-list.component.scss'],
+  animations: [
+    trigger('bounceIn', [transition('* => *', useAnimation(bounceIn))]),
+  ],
 })
-export class IconListComponent implements OnInit {
+export class IconListComponent extends BaseAnimation
+  implements OnInit, AfterViewInit, OnDestroy {
   items: MainListItem[]
-  constructor(public interactionService: InteractionService) {
+  constructor(
+    public interactionService: InteractionService,
+    public animationService: AnimationService,
+    public el: ElementRef
+  ) {
+    super(interactionService, animationService, el)
+    this.componentType = 'icon-list-item'
+    this.animationType = 'bounceIn'
+
     const ext = this.interactionService.isSafari ? '.png' : '.webp'
     this.items = [
       {
@@ -48,4 +70,12 @@ export class IconListComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  ngAfterViewInit() {
+    super.ngAfterViewInit()
+  }
+
+  ngOnDestroy() {
+    super.ngOnDestroy()
+  }
 }

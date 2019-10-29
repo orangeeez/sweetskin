@@ -2,15 +2,12 @@
     class="container"
     fxLayout="row wrap"
     fxLayoutAlign="flex-start"
-    fxLayoutGap="10px"
 >
-    <app-fab-list-item
-        fxFlex="0 1 calc(50% - 10px)"
+    <app-icon-list-item
+        fxFlex="0 1 50%"
         *ngFor="let item of items; let i = index"
-        [fxFlex.md]="flexPercentage ? flexPercentage : '0 1 calc(33% - 10px)'"
-        [fxFlex.lg]="flexPercentage ? flexPercentage : '0 1 calc(33% - 10px)'"
         [item]="item"
         [@bounceIn]="{ value: bounceIn, params: { timing: i } }"
         [style.visibility]="isElementShown ? 'visible' : 'hidden'"
-    ></app-fab-list-item>
+    ></app-icon-list-item>
 </div>

@@ -25,6 +25,7 @@ export class FabListComponent extends BaseAnimation
   implements OnInit, AfterViewInit, OnDestroy {
   @Input() flexPercentage: string
   @Input() items: FabListItem[]
+  bounceIn: any
 
   constructor(
     public interactionService: InteractionService,

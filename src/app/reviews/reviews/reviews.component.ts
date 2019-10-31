@@ -1,13 +1,16 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core'
 import { MediaObserver } from '@angular/flex-layout'
 import { InteractionService } from '@app/core/services/interaction.service'
+import { BlockquoteComponent } from '@app/shared/blockquote/blockquote.component'
 
 @Component({
   selector: 'app-reviews',
   templateUrl: './reviews.component.html',
   styleUrls: ['./reviews.component.scss'],
 })
-export class ReviewsComponent implements OnInit {
+export class ReviewsComponent implements OnInit, AfterViewInit {
+  @ViewChild('start', { static: false })
+  start: BlockquoteComponent
   quote = 'Lorem ipsum'
   heading = 'Отзывы'
   subheading = 'Lorem ipsum'
@@ -65,6 +68,10 @@ export class ReviewsComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  ngAfterViewInit() {
+    this.interactionService.scrollVertically(this.start.ref.nativeElement)
+  }
 
   onScroll() {
     // console.log('scroll')

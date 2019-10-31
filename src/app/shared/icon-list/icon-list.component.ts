@@ -23,6 +23,7 @@ import { trigger, transition, useAnimation } from '@angular/animations'
 export class IconListComponent extends BaseAnimation
   implements OnInit, AfterViewInit, OnDestroy {
   items: MainListItem[]
+  bounceIn: any
   constructor(
     public interactionService: InteractionService,
     public animationService: AnimationService,

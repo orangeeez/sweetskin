@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core'
+import { BehaviorSubject } from 'rxjs'
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +16,11 @@ export class InteractionService {
   carouselMaxWidth: string = 'auto'
   sidenavcontentHeight: number
   notificationPermission: string
+  _imageClicked = new BehaviorSubject('')
+
+  get imageClicked() {
+    return this._imageClicked.asObservable()
+  }
 
   constructor() {
     this.notificationPermission = Notification.permission

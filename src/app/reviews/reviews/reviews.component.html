@@ -1,0 +1,23 @@
+<app-blockquote [quote]="quote"></app-blockquote>
+<app-heading
+    [heading]="heading"
+    [subheading]="subheading"
+></app-heading>
+<app-infinite-scroll (scrolled)="onScroll()">
+    <div
+        class="container"
+        fxLayout="row wrap"
+        fxLayoutAlign="flex-start"
+    >
+        <app-review-item
+            *ngFor="let item of items | slice:0:count; let i = index"
+            [fxFlex.xs]="'0 1 calc(50% - 10px)'"
+            [fxFlex.sm]="'0 1 calc(50% - 10px)'"
+            [fxFlex.md]="'0 1 calc(33% - 10px)'"
+            [fxFlex.lg]="'0 1 calc(33% - 10px)'"
+            [fxFlex.xl]="'0 1 calc(25% - 10px)'"
+            [item]="item"
+            [index]="i"
+        ></app-review-item>
+    </div>
+</app-infinite-scroll>

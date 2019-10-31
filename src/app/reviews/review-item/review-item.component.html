@@ -1,0 +1,8 @@
+<div
+    [ngClass]="index % 2 ? 'right' : 'left'"
+    [ngStyle]="{'margin': margin + 'px'}"
+    [@bounceIn]="bounceIn"
+    (click)="onImageClick()"
+>
+    <img [src]="item">
+</div>

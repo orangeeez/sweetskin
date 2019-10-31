@@ -38,6 +38,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     { name: 'Цены и акции', routerLink: '/services' },
     { name: 'Наша команда', routerLink: '/team' },
     { name: 'Контакты', routerLink: '/contacts' },
+    { name: 'Отзывы', routerLink: '/reviews' },
   ]
 
   public slides: any = {

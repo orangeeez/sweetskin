@@ -19,6 +19,7 @@ import { PwaInstallationComponent } from './snackbars/pwa-installation/pwa-insta
 import { PwaMessagingComponent } from './snackbars/pwa-messaging/pwa-messaging.component'
 import { IconListComponent } from './icon-list/icon-list.component'
 import { IconListItemComponent } from './icon-list/icon-list-item/icon-list-item.component'
+import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component'
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { IconListItemComponent } from './icon-list/icon-list-item/icon-list-item
     PwaMessagingComponent,
     IconListComponent,
     IconListItemComponent,
+    InfiniteScrollComponent,
   ],
   imports: [
     CommonModule,
@@ -63,6 +65,7 @@ import { IconListItemComponent } from './icon-list/icon-list-item/icon-list-item
     FabListItemComponent,
     IconListComponent,
     IconListItemComponent,
+    InfiniteScrollComponent,
   ],
   entryComponents: [
     PwaInstallationComponent,

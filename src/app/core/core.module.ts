@@ -22,6 +22,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth'
 import { AngularFireMessagingModule } from '@angular/fire/messaging'
 import { PwaInstallComponent } from './pwa-install/pwa-install.component'
 import { AnimationService } from './services/animation.service'
+import { ImageViewerComponent } from './image-viewer/image-viewer.component'
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { AnimationService } from './services/animation.service'
     FabComponent,
     FabBottomSheetComponent,
     PwaInstallComponent,
+    ImageViewerComponent,
   ],
   imports: [
     CommonModule,
@@ -48,6 +50,7 @@ import { AnimationService } from './services/animation.service'
     FooterComponent,
     FabComponent,
     PwaInstallComponent,
+    ImageViewerComponent,
   ],
   providers: [
     ThemeService,

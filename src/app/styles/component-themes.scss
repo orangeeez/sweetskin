@@ -1,7 +1,9 @@
 @import '~app/shared/carousel/carousel.component';
 @import '~app/shared/heading/heading.component';
+@import '~app/core/image-viewer/image-viewer.component';
 
 @mixin component-themes($theme) {
   @include carousel-theme($theme);
   @include heading-theme($theme);
+  @include image-viewer-theme($theme);
 }

@@ -1,0 +1,39 @@
+@import '~app/styles/_variables';
+@import '~app/styles/_mixins';
+@import '~@angular/material/theming';
+
+@mixin image-viewer-theme($theme) {
+  $background-palette: map-get($theme, background);
+  $background-color: mat-color($background-palette, background);
+
+  app-image-viewer {
+    .container {
+      position: absolute;
+      display: flex;
+      width: 100%;
+      height: calc(100% - #{$header-height});
+      z-index: 1;
+      background-color: $background-color;
+
+      div {
+        display: flex;
+        margin: 50px 10px;
+        box-shadow: 0 0px 12px 1px #f48fb1;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+
+      button {
+        position: absolute;
+        right: 5px;
+
+        mat-icon {
+          font-size: 35px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<div
+    class="container"
+    [@bounceIn]="bounceIn"
+    [@bounceOut]="bounceOut"
+    (@bounceOut.done)="bounceOutDone()"
+    [style.visibility]="image ? 'visible' : 'hidden'"
+>
+    <div class="image-container">
+        <img [src]="image">
+    </div>
+    <button
+        mat-icon-button
+        color="primary"
+        (click)="onCloseClick()"
+    >
+        <mat-icon>close</mat-icon>
+    </button>
+</div>

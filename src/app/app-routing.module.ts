@@ -8,11 +8,6 @@ const routes: Routes = [
       import('./main/main.module').then(mod => mod.MainModule),
   },
   {
-    path: '',
-    redirectTo: '/main',
-    pathMatch: 'full',
-  },
-  {
     path: 'services',
     loadChildren: () =>
       import('./services/services.module').then(m => m.ServicesModule),
@@ -25,6 +20,16 @@ const routes: Routes = [
     path: 'contacts',
     loadChildren: () =>
       import('./contacts/contacts.module').then(m => m.ContactsModule),
+  },
+  {
+    path: 'reviews',
+    loadChildren: () =>
+      import('./reviews/reviews.module').then(m => m.ReviewsModule),
+  },
+  {
+    path: '',
+    redirectTo: '/main',
+    pathMatch: 'full',
   },
 ]
 

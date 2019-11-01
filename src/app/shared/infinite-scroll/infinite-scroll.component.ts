@@ -27,10 +27,6 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy {
     return this.host.nativeElement
   }
 
-  test() {
-    console.log(this.observer)
-  }
-
   ngOnInit() {
     const options = {
       root: this.isHostScrollable() ? this.host.nativeElement : null,
@@ -38,7 +34,6 @@ export class InfiniteScrollComponent implements OnInit, OnDestroy {
     }
 
     this.observer = new IntersectionObserver(([entry]) => {
-      console.log('observer')
       entry.isIntersecting && this.scrolled.emit()
     }, options)
 

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core'
 import { InteractionService } from '../services/interaction.service'
+import { AnalyticsLabel } from '@app/enums/analytics/analytics-label'
+import { AnalyticsAction } from '@app/enums/analytics/analytics-action'
+import { AnalyticsCategory } from '@app/enums/analytics/analytics-category'
+import { AnalyticsEvent } from '@app/models/analytics/analytics-event'
 
 @Component({
   selector: 'app-pwa-install',
@@ -19,5 +23,11 @@ export class PwaInstallComponent implements OnInit {
   onPwaInstallClick() {
     this.interactionService.homePrompt.prompt()
     this.interactionService.isPWAInstalled = true
+
+    new AnalyticsEvent(
+      AnalyticsCategory.PWA,
+      AnalyticsLabel.PWA_INSTALLATION,
+      AnalyticsAction.PWA_SIDENAV_INSTALLED
+    ).send()
   }
 }

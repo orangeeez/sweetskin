@@ -230,7 +230,6 @@ export class HorizontalCarouselComponent implements OnInit, AfterViewInit {
       const header = this.headers.find(
         header => this.currentIndex - 1 === header.item.id
       )
-      console.log(header.item)
       this.currentIndex--
       this.wrapperFlexbox.nativeElement.style.backgroundColor =
         header.item.backgroundColor
@@ -242,7 +241,6 @@ export class HorizontalCarouselComponent implements OnInit, AfterViewInit {
       const header = this.headers.find(
         header => this.currentIndex + 1 === header.item.id
       )
-      console.log(header.item)
       this.currentIndex++
       this.wrapperFlexbox.nativeElement.style.backgroundColor =
         header.item.backgroundColor

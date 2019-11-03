@@ -8,4 +8,5 @@ export enum AnalyticsAction {
   PWA_UPDATED = 'Updated',
   NOTIFICATIONS_ADDED = 'Added',
   FAB_CLICKED = 'Clicked',
+  CONTACTS_CLICKED = 'Clicked',
 }

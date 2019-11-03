@@ -20,18 +20,21 @@ export class ContactsComponent implements OnInit, AfterViewInit {
       icon: `my_location`,
       svg: false,
       link: 'https://goo.gl/maps/WHBpREED4Lxu1qLj8',
+      type: 'contacts',
     },
     {
       text: `@sweet.skin.kiev`,
       icon: `instagram`,
       svg: true,
       link: 'https://www.instagram.com/sweet.skin.kiev/',
+      type: 'contacts',
     },
     {
       text: `fb.com/sweet.skin.kiev`,
       icon: `facebook`,
       svg: true,
       link: 'https://www.facebook.com/sweet.skin.kiev/',
+      type: 'contacts',
     },
     {
       text: `+38 (066) 708-80-63`,
@@ -39,6 +42,7 @@ export class ContactsComponent implements OnInit, AfterViewInit {
       icon: `phone`,
       svg: false,
       link: 'tel:+38 (066) 708-80-63',
+      type: 'contacts',
     },
   ]
 

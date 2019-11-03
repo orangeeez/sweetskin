@@ -5,4 +5,5 @@ export class FabListItem {
   icon?: string
   svg?: boolean
   link?: string
+  type?: string
 }

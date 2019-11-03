@@ -23,6 +23,7 @@ import { AngularFireMessagingModule } from '@angular/fire/messaging'
 import { PwaInstallComponent } from './pwa-install/pwa-install.component'
 import { AnimationService } from './services/animation.service'
 import { ImageViewerComponent } from './image-viewer/image-viewer.component'
+import { ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ImageViewerComponent } from './image-viewer/image-viewer.component'
     FlexLayoutModule,
     RouterModule,
     HttpClientModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,

@@ -13,9 +13,9 @@
                 (keydown.escape)="close()"
                 disableClose
             >
-                <p class="menu-item">
+                <!-- <p class="menu-item">
                     <img [src]="interactionService.isSafari ? 'assets/images/logo.png' : 'assets/images/logo.webp'">
-                </p>
+                </p> -->
                 <p class="menu-item">
                     <button
                         *ngFor="let item of menuItems"
@@ -33,6 +33,7 @@
                 (scroll)="onScroll($event)"
             >
                 <app-carousel
+                    *ngIf="router.url !== 'admin'"
                     [slides]="interactionService.isSafari ? slides.jpg : slides.webp"
                     [proportion]="'40'"
                 >
@@ -40,7 +41,7 @@
                 <router-outlet (activate)="onActivate()"></router-outlet>
             </mat-sidenav-content>
         </mat-sidenav-container>
-        <app-fab></app-fab>
+        <app-fab *ngIf="router.url !== 'admin'"></app-fab>
         <app-image-viewer></app-image-viewer>
     </div>
 </div>

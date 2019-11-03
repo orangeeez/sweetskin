@@ -11,9 +11,10 @@ import { BlockquoteComponent } from '@app/shared/blockquote/blockquote.component
 export class ReviewsComponent implements OnInit, AfterViewInit {
   @ViewChild('start', { static: false })
   start: BlockquoteComponent
-  quote = 'Lorem ipsum'
+  quote =
+    'Наша работа — заботиться о клиентах настолько хорошо, чтобы они продолжали возвращаться к нам снова и снова'
   heading = 'Отзывы'
-  subheading = 'Lorem ipsum'
+  subheading = ''
   count = 0
   mqalias: string
   items: any[]

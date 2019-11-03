@@ -1,0 +1,50 @@
+<ng-container *ngIf="!user">
+    <div class="header-container">
+        <img [src]="'assets/images/logo.png'">
+    </div>
+    <div class="login-container">
+        <form
+            [formGroup]="adminForm"
+            (ngSubmit)="onSubmit()"
+        >
+            <mat-form-field [@bounceInLeft]="{ value: bounceInLeft, params: { timing: 1 }}">
+                <input
+                    formControlName="nickname"
+                    matInput
+                    required
+                    placeholder="Логин"
+                >
+                <mat-error *ngIf="form['nickname']?.errors?.required">Логин обязательный</mat-error>
+                <mat-error *ngIf="form['nickname']?.errors?.minlength">Ни менее 4 символов</mat-error>
+            </mat-form-field>
+            <mat-form-field [@bounceInLeft]="{ value: bounceInLeft, params: { timing: 2 }}">
+                <input
+                    formControlName="password"
+                    type="password"
+                    matInput
+                    required
+                    placeholder="Пароль"
+                >
+                <mat-error *ngIf="form['password']?.errors?.required">Пароль обязательный</mat-error>
+                <mat-error *ngIf="form['password']?.errors?.minlength">Ни менее 4 символов</mat-error>
+            </mat-form-field>
+            <button
+                type="submit"
+                mat-raised-button
+                color="primary"
+                [disabled]="!adminForm.valid"
+                [@bounceInLeft]="{ value: bounceInLeft, params: { timing: 3 }}"
+            >
+                Войти
+            </button>
+        </form>
+    </div>
+</ng-container>
+<mat-tab-group
+    *ngIf="user"
+    [@bounceInDown]="{ value: bounceInDown, params: { timing: 1 }}"
+>
+    <mat-tab label="Уведомления">
+        <app-firebase></app-firebase>
+    </mat-tab>
+</mat-tab-group>

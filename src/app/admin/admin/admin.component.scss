@@ -1,0 +1,13 @@
+@import '~app/styles/_mixins';
+@import '~app/styles/_variables';
+@import '~app/styles/_partial';
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.login-container {
+  @include column-form
+}

@@ -28,7 +28,7 @@ export class ContactsComponent implements OnInit, AfterViewInit {
       link: 'https://www.instagram.com/sweet.skin.kiev/',
     },
     {
-      text: `fb.com/helena .sweetskin`,
+      text: `fb.com/sweet.skin.kiev`,
       icon: `facebook`,
       svg: true,
       link: 'https://www.facebook.com/sweet.skin.kiev/',

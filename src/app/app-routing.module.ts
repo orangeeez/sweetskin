@@ -27,6 +27,10 @@ const routes: Routes = [
       import('./reviews/reviews.module').then(m => m.ReviewsModule),
   },
   {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+  },
+  {
     path: '',
     redirectTo: '/main',
     pathMatch: 'full',

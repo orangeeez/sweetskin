@@ -9,13 +9,20 @@ import { AnalyticsEvent } from '@app/models/analytics/analytics-event'
 import { AnalyticsCategory } from '@app/enums/analytics/analytics-category'
 import { AnalyticsLabel } from '@app/enums/analytics/analytics-label'
 import { AnalyticsAction } from '@app/enums/analytics/analytics-action'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
+import { NotificationSender } from '@app/models/notification-sender'
+import { environment } from 'environments/environment'
 
 @Injectable({
   providedIn: 'root',
 })
 export class FcmService {
   currentMessage = new BehaviorSubject(null)
+  api = 'https://fcm.googleapis.com/fcm/send'
+  messagingAPI = environment.firebase.messagingAPI
+  httpOptions: any
   constructor(
+    private http: HttpClient,
     private interactionService: InteractionService,
     private angularFireDB: AngularFireDatabase,
     private angularFireAuth: AngularFireAuth,
@@ -25,6 +32,12 @@ export class FcmService {
       _messaging.onMessage = _messaging.onMessage.bind(_messaging)
       _messaging.onTokenRefresh = _messaging.onTokenRefresh.bind(_messaging)
     })
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: 'key=' + this.messagingAPI,
+      }),
+    }
   }
 
   generateUUID() {
@@ -89,5 +102,9 @@ export class FcmService {
     this.angularFireMessaging.messages.subscribe(payload => {
       this.currentMessage.next(payload)
     })
+  }
+
+  sendNotification(notification: NotificationSender) {
+    return this.http.post(this.api, notification, this.httpOptions).pipe()
   }
 }

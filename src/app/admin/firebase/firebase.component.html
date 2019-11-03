@@ -1,0 +1,54 @@
+<div class="notification-container">
+    <form
+        [formGroup]="notificationForm"
+        (ngSubmit)="onSubmit()"
+    >
+        <mat-form-field>
+            <input
+                formControlName="title"
+                matInput
+                required
+                placeholder="Заголовок"
+            >
+            <mat-error *ngIf="form['title']?.errors?.required">Заголовок обязательный</mat-error>
+            <mat-error *ngIf="form['title']?.errors?.minlength">Ни менее 4 символов</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea
+                formControlName="body"
+                matInput
+                required
+                placeholder="Сообщение"
+            ></textarea>
+            <mat-error *ngIf="form['body']?.errors?.required">Сообщение обязателбно</mat-error>
+            <mat-error *ngIf="form['body']?.errors?.minlength">Ни менее 4 символов</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input
+                formControlName="path"
+                matInput
+                required
+                placeholder="Путь к странице"
+            >
+            <mat-hint>/services</mat-hint>
+            <mat-error *ngIf="form['path']?.errors?.required">Путь к странице обязательный</mat-error>
+            <mat-error *ngIf="form['path']?.errors?.minlength">Ни менее 4 символов</mat-error>
+        </mat-form-field>
+        <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            [disabled]="!notificationForm.valid"
+        >
+            Отправить
+        </button>
+    </form>
+    <button
+        mat-raised-button
+        color="primary"
+        class="history-button"
+        (click)="onHistoryClick()"
+    >
+        История
+    </button>
+</div>

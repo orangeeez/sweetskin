@@ -1,0 +1,36 @@
+@import '~app/styles/_mixins';
+@import '~app/styles/_variables';
+@import '~app/styles/_partial';
+
+@import '~app/styles/_mixins';
+@import '~app/styles/_variables';
+@import '~app/styles/_partial';
+
+.notification-container {
+  @include column-form;
+
+  .history-button {
+    position: fixed;
+    bottom: 100px;
+
+    @include xs {
+      width: 80%;
+    }
+
+    @include sm {
+      width: 80%;
+    }
+
+    @include md {
+      width: 60%;
+    }
+
+    @include lg {
+      width: 50%;
+    }
+
+    @include xl {
+      width: 40%;
+    }
+  }
+}

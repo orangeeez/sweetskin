@@ -9,20 +9,21 @@
   app-image-viewer {
     .container {
       position: absolute;
+      top: $header-height;
       display: flex;
       width: 100%;
       height: calc(100% - #{$header-height});
       z-index: 1;
       background-color: $background-color;
 
-      div {
+      .image-container {
         display: flex;
-        margin: 50px 10px;
+        justify-content: center;
         box-shadow: 0 0px 12px 1px #f48fb1;
 
         img {
-          object-fit: cover;
-          width: 100%;
+          object-fit: contain;
+          width: 80%;
         }
       }
 

@@ -31,7 +31,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   @ViewChild('sidenav', { static: false }) sidenav: MatSidenav
   @ViewChild('sidenavcontent', { static: false })
   sidenavcontent: MatSidenavContent
-  public notificationPermission: string
   public isDarkTheme: Observable<boolean>
   public menuItems: MenuItem[] = [
     { name: 'Главная', routerLink: '/main' },
@@ -70,7 +69,6 @@ export class AppComponent implements OnInit, AfterViewInit {
       window.innerWidth / window.innerHeight
     ).toFixed(2)
 
-    this.notificationPermission = Notification.permission
     this.interactionService.isSafari = /^((?!chrome|android).)*safari/i.test(
       navigator.userAgent
     )

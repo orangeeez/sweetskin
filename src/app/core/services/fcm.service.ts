@@ -81,7 +81,7 @@ export class FcmService {
   requestPermission(userId) {
     this.angularFireMessaging.requestToken.subscribe(
       token => {
-        this.interactionService.notificationPermission = Notification.permission
+        // this.interactionService.notificationPermission = Notification.permission
         new AnalyticsEvent(
           AnalyticsCategory.NOTIFICATIONS,
           AnalyticsLabel.NOTIFICATIONS_INTERACTION,

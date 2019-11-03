@@ -23,7 +23,8 @@ export class InteractionService {
   }
 
   constructor() {
-    this.notificationPermission = Notification.permission
+    if ('Notification' in window)
+      this.notificationPermission = Notification.permission
   }
 
   scrollVertically(element: any) {

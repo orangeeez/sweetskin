@@ -7,4 +7,5 @@ export enum AnalyticsAction {
   PWA_SAFARI_LAUNCHED = 'Safari launched',
   PWA_UPDATED = 'Updated',
   NOTIFICATIONS_ADDED = 'Added',
+  FAB_CLICKED = 'Clicked',
 }

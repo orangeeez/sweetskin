@@ -8,6 +8,7 @@ import {
   QueryList,
   ChangeDetectorRef,
   Input,
+  ViewEncapsulation,
 } from '@angular/core'
 import { hCarouselItem } from '@app/models/h-carousel/h-carousel-item'
 import { HCarouselHeaderComponent } from './h-carousel-header/h-carousel-header.component'

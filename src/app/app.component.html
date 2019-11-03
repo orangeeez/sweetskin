@@ -13,9 +13,12 @@
                 (keydown.escape)="close()"
                 disableClose
             >
-                <!-- <p class="menu-item">
+                <p
+                    *ngIf="interactionService.isPWAInstalled"
+                    class="menu-item"
+                >
                     <img [src]="interactionService.isSafari ? 'assets/images/logo.png' : 'assets/images/logo.webp'">
-                </p> -->
+                </p>
                 <p class="menu-item">
                     <button
                         *ngFor="let item of menuItems"

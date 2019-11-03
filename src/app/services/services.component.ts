@@ -1,4 +1,10 @@
-import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core'
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core'
 import { servicesTabItem } from '@app/models/services/services-tab-item'
 import { InteractionService } from '@app/core/services/interaction.service'
 import { HeadingComponent } from '@app/shared/heading/heading.component'

@@ -10,4 +10,14 @@ html {
   body {
     margin: 0;
   }
+
+  .mat-tab-label {
+    @include md {
+      font-size: 18px;
+    }
+
+    @include lg {
+      font-size: 18px;
+    }
+  }
 }

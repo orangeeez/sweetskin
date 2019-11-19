@@ -1,5 +1,6 @@
 div {
   display: flex;
+  align-items: flex-start;
   margin: 16px;
   box-shadow: 0 0px 12px 1px #f48fb1;
 
@@ -14,5 +15,6 @@ div {
   img {
     object-fit: cover;
     width: 100%;
+    height: auto;
   }
 }

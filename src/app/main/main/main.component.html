@@ -1,23 +1,58 @@
-<app-heading #start [heading]="heading_1" [subheading]="subheading_1"></app-heading>
-<app-main-list [items]="mainListItems" [imageFlex]="50" [contentFlex]="50"></app-main-list>
+<app-heading
+    #start
+    [heading]="heading_1"
+    [subheading]="subheading_1"
+></app-heading>
+<app-main-list
+    [items]="mainListItems"
+    [imageFlex]="50"
+    [contentFlex]="50"
+></app-main-list>
 
 <app-blockquote [quote]="quote_2"></app-blockquote>
-<app-heading [heading]="heading_2" [subheading]="subheading_2">
+<app-heading
+    [heading]="heading_2"
+    [subheading]="subheading_2"
+>
 </app-heading>
-<app-carousel [slides]="interactionService.isSafari ? slides.jpg : slides.webp"
-  [proportion]="interactionService.carouselProportion" [maxWidth]="interactionService.carouselMaxWidth"
-  [hideOverlay]="'true'" [hideTitle]="'true'">
+<app-carousel
+    #carousel
+    (deferLoad)="carousel.slides = interactionService.isSafari ? slides.jpg : slides.webp"
+    [proportion]="interactionService.carouselProportion"
+    [maxWidth]="interactionService.carouselMaxWidth"
+    [hideOverlay]="'true'"
+    [hideTitle]="'true'"
+>
 </app-carousel>
 
-<app-heading [heading]="heading_3" [subheading]="subheading_3"></app-heading>
+<app-heading
+    [heading]="heading_3"
+    [subheading]="subheading_3"
+></app-heading>
 <app-icon-list></app-icon-list>
 
-<app-heading [heading]="servicesHeading" [subheading]="servicesSubheading"></app-heading>
-<app-horizontal-carousel [isShow]="true"></app-horizontal-carousel>
+<app-heading
+    [heading]="servicesHeading"
+    [subheading]="servicesSubheading"
+></app-heading>
+<app-horizontal-carousel
+    #hcarousel
+    [isShow]="true"
+    (deferLoad)="hcarousel.isShowItems = true"
+></app-horizontal-carousel>
 
-<app-heading [heading]="heading_4" [subheading]="subheading_4"></app-heading>
+<app-heading
+    [heading]="heading_4"
+    [subheading]="subheading_4"
+></app-heading>
 <app-blockquote [quote]="quote_3"></app-blockquote>
 <app-fab-list [items]="advantages"></app-fab-list>
 
-<app-heading [heading]="heading_5" [subheading]="subheading_5"></app-heading>
-<app-fab-list [items]="contacts" [flexPercentage]="'0 1 calc(25% - 10px)'"></app-fab-list>
+<app-heading
+    [heading]="heading_5"
+    [subheading]="subheading_5"
+></app-heading>
+<app-fab-list
+    [items]="contacts"
+    [flexPercentage]="'0 1 calc(25% - 10px)'"
+></app-fab-list>

@@ -1,20 +1,38 @@
-<mat-tab-group *ngIf="isShow" (selectedTabChange)="onTabChange($event)">
-  <mat-tab label="depilation">
-    <ng-template mat-tab-label>
-      <mat-icon [svgIcon]="'cotton'"></mat-icon>
-      Депиляция
-    </ng-template>
-  </mat-tab>
-  <mat-tab label="cosmetology">
-    <ng-template mat-tab-label>
-      <mat-icon [svgIcon]="'makeup'"></mat-icon>
-      Косметология
-    </ng-template>
-  </mat-tab>
+<mat-tab-group
+    *ngIf="isShow"
+    (selectedTabChange)="onTabChange($event)"
+>
+    <mat-tab label="depilation">
+        <ng-template mat-tab-label>
+            <mat-icon [svgIcon]="'cotton'"></mat-icon>
+            Депиляция
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="cosmetology">
+        <ng-template mat-tab-label>
+            <mat-icon [svgIcon]="'makeup'"></mat-icon>
+            Косметология
+        </ng-template>
+    </mat-tab>
 </mat-tab-group>
-<div #wrapperFlexbox class="scrolling-wrapper-flexbox">
-  <div *ngFor="let item of items" class="card" (swipe)="onSwipe($event)">
-    <app-h-carousel-header #header [item]="item"></app-h-carousel-header>
-    <img [src]="item.image" [srcset]="item.image + ' 296w, ' + item.imageMD + ' 580w'" alt="">
-  </div>
+<div
+    #wrapperFlexbox
+    *ngIf="isShowItems"
+    class="scrolling-wrapper-flexbox"
+>
+    <div
+        *ngFor="let item of items"
+        class="card"
+        (swipe)="onSwipe($event)"
+    >
+        <app-h-carousel-header
+            #header
+            [item]="item"
+        ></app-h-carousel-header>
+        <img
+            [src]="item.image || ''"
+            [srcset]="item.image + ' 296w, ' + item.imageMD + ' 580w'"
+            alt
+        >
+    </div>
 </div>

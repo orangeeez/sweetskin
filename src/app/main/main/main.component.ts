@@ -185,4 +185,8 @@ export class MainComponent implements OnInit, AfterViewInit {
 
     this.interactionService.isFirstVisit = false
   }
+
+  onDeferLoad() {
+    console.log('defer')
+  }
 }

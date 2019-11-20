@@ -3,6 +3,30 @@
 # than the current time-stamp on the file system then another resource has updated this file.
 # Duplicator only writes to this file once during the install process while running the installer.php file.
 
+AddType		image/svg+xml			svg svgz
+AddEncoding	gzip				svgz
+
+# Webfonts
+AddType application/vnd.ms-fontobject		eot
+AddType application/x-font-ttf			ttf ttc
+AddType font/opentype				otf
+AddType application/x-font-woff			woff
+
+# Assorted types
+AddType	image/x-icon				ico
+AddType	image/webp				webp
+AddType	text/cache-manifest			appcache manifest
+AddType	text/x-component			htc
+AddType	application/xml				rss atom xml rdf
+AddType	application/x-chrome-extension		crx
+AddType	application/x-opera-extension		oex
+AddType	application/x-xpinstall			xpi
+AddType	application/octet-stream		safariextz
+AddType	application/x-web-app-manifest+json	webapp
+AddType	text/x-vcard				vcf
+AddType	application/x-shockwave-flash		swf
+AddType	text/vtt				vtt
+
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 
@@ -38,13 +62,13 @@
     ExpiresByType video/mpeg "access plus 1 year"
 
     # CSS, JavaScript
-    ExpiresByType text/css "access plus 1 week"
-    ExpiresByType text/javascript "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType text/javascript "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
 
     # Others
-    ExpiresByType application/pdf "access plus 1 month"
-    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 year"
+    ExpiresByType application/x-shockwave-flash "access plus 1 year"
 </IfModule> 
 
 <IfModule mod_deflate.c>

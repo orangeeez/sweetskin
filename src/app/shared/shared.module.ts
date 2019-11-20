@@ -20,6 +20,7 @@ import { PwaMessagingComponent } from './snackbars/pwa-messaging/pwa-messaging.c
 import { IconListComponent } from './icon-list/icon-list.component'
 import { IconListItemComponent } from './icon-list/icon-list-item/icon-list-item.component'
 import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.component'
+import { DeferLoadModule } from '@trademe/ng-defer-load'
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
     MatCarouselModule,
     FlexLayoutModule,
     MaterialModule,
+    DeferLoadModule,
   ],
   exports: [
     CommonModule,
@@ -55,6 +57,7 @@ import { InfiniteScrollComponent } from './infinite-scroll/infinite-scroll.compo
     RouterModule,
     MaterialModule,
     FlexLayoutModule,
+    DeferLoadModule,
     CarouselComponent,
     HeadingComponent,
     BlockquoteComponent,

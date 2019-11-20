@@ -29,6 +29,7 @@ export class HorizontalCarouselComponent implements OnInit, AfterViewInit {
     HCarouselHeaderComponent
   >
   @Input() isShow: boolean
+  isShowItems: boolean = false
   currentIndex = 0
   colorIndex = 0
   lightThemeColors: hThemeColor[] = [

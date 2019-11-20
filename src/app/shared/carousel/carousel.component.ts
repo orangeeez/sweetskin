@@ -12,7 +12,7 @@ import { FcmService } from '@app/core/services/fcm.service'
   styleUrls: ['./carousel.component.scss'],
 })
 export class CarouselComponent implements OnInit {
-  @Input() public slides: string[]
+  @Input() public slides: string[] = []
   @Input() public proportion = 70
   @Input() public hideOverlay: boolean
   @Input() public hideTitle: boolean

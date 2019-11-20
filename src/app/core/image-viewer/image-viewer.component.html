@@ -6,7 +6,7 @@
     [style.visibility]="image ? 'visible' : 'hidden'"
 >
     <div class="image-container">
-        <img [src]="image">
+        <img [src]="image || ''">
     </div>
     <button
         mat-icon-button

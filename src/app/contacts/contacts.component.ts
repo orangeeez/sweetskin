@@ -16,10 +16,10 @@ export class ContactsComponent implements OnInit, AfterViewInit {
 
   public contacts: FabListItem[] = [
     {
-      text: `Киев, улица Большая Житомирская 30-А`,
+      text: `Киев, ул. Бассейная 5-Б`,
       icon: `my_location`,
       svg: false,
-      link: 'https://goo.gl/maps/WHBpREED4Lxu1qLj8',
+      link: 'https://goo.gl/maps/KfneNMy3HqCQb4hB7',
       type: 'contacts',
     },
     {
@@ -37,11 +37,11 @@ export class ContactsComponent implements OnInit, AfterViewInit {
       type: 'contacts',
     },
     {
-      text: `+38 (066) 708-80-63`,
+      text: `+38 (096) 802-00-41`,
       subtext: `+38 (098) 074-90-90`,
       icon: `phone`,
       svg: false,
-      link: 'tel:+38 (066) 708-80-63',
+      link: 'tel:+38 (096) 802-00-41',
       type: 'contacts',
     },
   ]

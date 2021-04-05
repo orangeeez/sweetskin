@@ -24,6 +24,16 @@ export class ReviewsComponent implements OnInit, AfterViewInit {
   ) {
     const ext = this.interactionService.isSafari ? '.jpg' : '.webp'
     this.items = [
+      'assets/images/reviews/31' + ext,
+      'assets/images/reviews/30' + ext,
+      'assets/images/reviews/29' + ext,
+      'assets/images/reviews/28' + ext,
+      'assets/images/reviews/27' + ext,
+      'assets/images/reviews/26' + ext,
+      'assets/images/reviews/25' + ext,
+      'assets/images/reviews/24' + ext,
+      'assets/images/reviews/23' + ext,
+      'assets/images/reviews/22' + ext,
       'assets/images/reviews/1' + ext,
       'assets/images/reviews/2' + ext,
       'assets/images/reviews/3' + ext,

@@ -5,9 +5,10 @@
     [fxFlex.lg]="imageFlex"
     [@bounceInLeft]="bounceInLeft"
     [style.visibility]="isElementShown ? 'visible' : 'hidden'"
+    [style.text-align]="!!left ? 'right' : 'left'"
 >
     <img
-        [ngClass]="[!!left ? 'left' : 'right', isTeam ? 'team' : '']"
+        [ngClass]="[!!left ? 'left' : 'right', isTeam ? 'team' : '', item.isVertical ? 'vertical' : '']"
         class="image"
         [src]="item.image"
         [srcset]="item.image + ' 450w, ' + item.imageMD + ' 800w'"

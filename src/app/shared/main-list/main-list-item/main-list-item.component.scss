@@ -13,8 +13,12 @@
   height: 100%;
 }
 
+.image.vertical {
+  width: 80% !important;
+}
+
 .image.team {
-  width: 85% !important;
+  // width: 85% !important;
 }
 
 img.left {
@@ -22,7 +26,7 @@ img.left {
 }
 
 img.right {
-  @include clip-path(polygon(0% 0%, 90% 0%, 75% 100%, 0% 100%));
+  @include clip-path(polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%));
 }
 
 .content {

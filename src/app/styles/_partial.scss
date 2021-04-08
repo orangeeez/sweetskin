@@ -40,6 +40,8 @@ app-services {
 
   .cell {
     @extend .bold;
+    text-align: center;
+    padding-right: 0 !important; 
   }
 }
 

@@ -45,11 +45,13 @@ export class AppComponent implements OnInit, AfterViewInit {
       'assets/images/carousel/1.webp',
       'assets/images/carousel/2.webp',
       'assets/images/carousel/3.webp',
+      'assets/images/carousel/4.webp',
     ],
     jpg: [
       'assets/images/carousel/1.jpg',
       'assets/images/carousel/2.jpg',
       'assets/images/carousel/3.jpg',
+      'assets/images/carousel/4.jpg',
     ],
   }
 

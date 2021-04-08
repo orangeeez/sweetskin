@@ -163,10 +163,9 @@ export class MainComponent implements OnInit, AfterViewInit {
         isVertical: true
       },
       {
-        image: 'assets/images/main-items/sm/main-item-5-5' + ext,
-        imageMD: 'assets/images/main-items/md/main-item-5-5' + ext,
+        image: 'assets/images/main-items/sm/main-item-5-5-5' + ext,
+        imageMD: 'assets/images/main-items/md/main-item-5-5-5' + ext,
         text: `Удобное месторасположение студии в самом центре Киева по адресу ул. Бассейная 5-Б позволит быстро и разным видом транспорта добраться к нам из любой точки Киева, ведь мы дорожим вашим временем и стараемся делать процедуры не только качественно, но и максимально быстро!`,
-        isVertical: true
       },
       {
         image: 'assets/images/main-items/sm/main-item-6-6' + ext,

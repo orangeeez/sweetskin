@@ -1,5 +1,6 @@
 export interface TableItem {
   zone: string
   master: string
-  top: string
+  top: string,
+  bold?: boolean
 }

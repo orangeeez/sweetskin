@@ -16,7 +16,7 @@ export class TeamComponent implements OnInit, AfterViewInit {
   public heading_1 = `Елена`
   public subheading_1 = `Ведущий мастер шугаринга, косметолог `
 
-  public heading_2 = `Ольга`
+  public heading_2 = `Алена`
   public subheading_2 = `Мастер шугаринга, косметолог`
 
   public heading_3 = `Галерея`

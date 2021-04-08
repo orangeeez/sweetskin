@@ -2,6 +2,7 @@
 @import '~app/styles/_mixins';
 
 th {
+  padding-right: 20px;
   @include md {
     font-size: 18px !important;
   }

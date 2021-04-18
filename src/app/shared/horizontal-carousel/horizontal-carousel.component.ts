@@ -190,7 +190,7 @@ export class HorizontalCarouselComponent implements OnInit, AfterViewInit {
       {
         id: 7,
         elementID: 'test',
-        header: 'Микротоковая терапия',
+        header: 'Аппаратная косметология',
         backgroundColor: '#679fb7',
         headerColor: '#177da9',
         image: 'assets/images/h-carousel/cosmetology/sm/9' + ext,

@@ -41,7 +41,7 @@ export class IconListComponent extends BaseAnimation
       },
       {
         image: `assets/images/main-items/procedures/procedure-2` + ext,
-        text: `Массаж (классический, пластический, по жаке)`,
+        text: `Массажи (Хиропластический, нейроседативный, лимфодренажный)`,
       },
       {
         image: `assets/images/main-items/procedures/procedure-3` + ext,
